@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE</title>
+    <link rel="shortcut icon" href="dise1.png" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: teal;
+        }
+        img {
+            height: 400px;
+            width: 400px;
+            transition: transform 0.5s;
+        }
+        button {
+          
+            border-radius: 100%;
+            height: 40px;
+            width: 60px;
+            background-color: greenyellow;
+            font-size: 18px;
+            border: 1px solid black;
+        }
+        nav {
+            margin-bottom: 40px;
+            width: 100%;
+            text-align: center;
+            height: 70px;
+            justify-content: center;
+            align-items: center;
+        }
+        nav a {
+            display: inline-block;
+            background-color: greenyellow;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            width: 30%;
+        }
+        nav a:hover {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+  
+    
+    <img id="pic" src="dise1.png" alt="Dice">
+    <button onclick="handleClick()">SPIN</button>
+    <br>
+    <div id="display-text">Rolled Number : 1</div>
+ <script src="app.js"></script>
