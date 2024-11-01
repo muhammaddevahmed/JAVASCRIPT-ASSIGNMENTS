@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Card Generator</title>
+  <style>
+body { 
+  font-family: Arial, sans-serif; 
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.container { 
+  width: 100%; 
+  max-width: 400px; 
+  margin: 0 auto; 
+  padding: 20px; 
+  background: white; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  text-align: left; 
+}
+
+.input-group { 
+  margin-bottom: 10px; 
+  text-align: left; 
+}
+
+label, input, select { 
+  width: 100%; 
+}
+
+input, select { 
+  padding: 8px; 
+  margin-top: 5px; 
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+}
+
+.submit-btn { 
+  width: 100%; 
+  padding: 10px; 
+  background: #4CAF50; 
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+.id-card { 
+  width: 300px; 
+  margin: 20px auto; 
+  padding: 15px; 
+  background: #e6f7ff; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+
+.id-card img { 
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: 10px; 
+}
+
+.id-card h4 { 
+  margin: 5px 0; 
+  font-size: 1.1em; 
+  color: #333; 
+}
+
+.id-card p { 
+  margin: 2px 0; 
+  color: #555; 
+  font-size: 0.9em; 
+}
+
+#download-btn { 
+  display: block; 
+  margin: 15px auto; 
+  padding: 8px 12px; 
+  background: #333; 
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3>Create ID Card</h3>
+    <div class="input-group"><label>Name</label><input type="text" id="name"></div>
+    <div class="input-group"><label>Father's Name</label><input type="text" id="fatherName"></div>
+    <div class="input-group"><label>Roll Number</label><input type="text" id="rollNumber"></div>
+    <div class="input-group"><label>Contact Number</label><input type="number" id="contactNumber"></div>
+    <div class="input-group"><label>Gender</label><select id="gender"><option>Male</option><option>Female</option></select></div>
+    <div class="input-group"><label>Profile Image</label><input type="file" id="profileImage" accept="image/*"></div>
+    <button class="submit-btn" onclick="generateIDCard()">Generate ID Card</button>
+  </div>
+
+  <div id="idCard" class="id-card" style="display:none;">
+    <img id="displayImage" src="" alt="Profile Image">
+    <h4 id="displayName"></h4>
+    <p id="displayFatherName"></p>
+    <p id="displayRollNumber"></p>
+    <p id="displayContactNumber"></p>
+    <p id="displayGender"></p>
+  </div>
+  <button id="download-btn" style="display:none;" onclick="downloadIDCard()">Download ID Card</button>
+
+  <script>
+    function generateIDCard() {
+      const name = document.getElementById('name').value;
+      const fatherName = document.getElementById('fatherName').value;
+      const rollNumber = document.getElementById('rollNumber').value;
+      const contactNumber = document.getElementById('contactNumber').value;
+      const gender = document.getElementById('gender').value;
+      const profileImage = document.getElementById('profileImage').files[0];
+
+      if (profileImage) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          localStorage.setItem("name", name);
+          localStorage.setItem("fatherName", fatherName);
+          localStorage.setItem("rollNumber", rollNumber);
+          localStorage.setItem("contactNumber", contactNumber);
+          localStorage.setItem("gender", gender);
+          localStorage.setItem("profileImage", reader.result);
+          showIDCard();
+        };
+        reader.readAsDataURL(profileImage);
+      } else {
+        alert("Please upload a profile image.");
+      }
+    }
+
+    function showIDCard() {
+      document.getElementById("displayName").textContent = "Name: " + localStorage.getItem("name");
+      document.getElementById("displayFatherName").textContent = "Father's Name: " + localStorage.getItem("fatherName");
+      document.getElementById("displayRollNumber").textContent = "Roll Number: " + localStorage.getItem("rollNumber");
+      document.getElementById("displayContactNumber").textContent = "Contact: " + localStorage.getItem("contactNumber");
+      document.getElementById("displayGender").textContent = "Gender: " + localStorage.getItem("gender");
+      document.getElementById("displayImage").src = localStorage.getItem("profileImage");
+      document.getElementById("idCard").style.display = "block";
+      document.getElementById("download-btn").style.display = "block";
+    }
+
+    function downloadIDCard() {
+      html2canvas(document.querySelector("#idCard")).then(canvas => {
+        let link = document.createElement("a");
+        link.download = "id_card.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem("name")) showIDCard();
+    };
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</body>
+</html> 
