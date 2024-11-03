@@ -203,4 +203,3 @@ function showSignup() {
 // Initialize the app
 initializeUserData();
 
-
