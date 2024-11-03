@@ -1,0 +1,85 @@
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+  }
+  
+  .container { 
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: left; 
+  }
+  
+  .input-group { 
+    margin-bottom: 10px; 
+    text-align: left; 
+  }
+  
+  label, input, select { 
+    width: 100%; 
+  }
+  
+  input, select { 
+    padding: 8px; 
+    margin-top: 5px; 
+    border-radius: 4px; 
+    border: 1px solid #ccc; 
+  }
+  
+  .submit-btn { 
+    width: 100%; 
+    padding: 10px; 
+    background: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+  }
+  
+  .id-card { 
+    width: 300px; 
+    margin: 20px auto; 
+    padding: 15px; 
+    background: #e6f7ff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+  }
+  
+  .id-card img { 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 10px; 
+  }
+  
+  .id-card h4 { 
+    margin: 5px 0; 
+    font-size: 1.1em; 
+    color: #333; 
+  }
+  
+  .id-card p { 
+    margin: 2px 0; 
+    color: #555; 
+    font-size: 0.9em; 
+  }
+  
+  #download-btn { 
+    display: block; 
+    margin: 15px auto; 
+    padding: 8px 12px; 
+    background: #333; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+  }
