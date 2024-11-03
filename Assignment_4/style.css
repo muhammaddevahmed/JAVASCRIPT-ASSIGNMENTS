@@ -1,0 +1,26 @@
+body{
+    background-color: cornsilk;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    background-color: gray;
+}
+.odd {
+    background-color: orange;
+}
+.even {
+    background-color: rgb(24, 197, 24);
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+    color: darkblue;
+}
