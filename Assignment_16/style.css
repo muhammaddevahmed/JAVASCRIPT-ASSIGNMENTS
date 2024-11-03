@@ -1,0 +1,30 @@
+body{
+    justify-content: center;
+    align-items: center;
+    background-color: thistle;
+    
+}
+.shape-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 50px;
+}
+
+.shape {
+  width: 100px;
+  height: 100px;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.rectangle {
+  width: 150px;
+}
+h1{
+    text-align: center;
+}
