@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Signup Form</h1>
+        <form onsubmit="takeInputs(); return false;">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" required>
+
+            <label for="YourEmail">Email:</label>
+            <input type="email" id="YourEmail" required>
+
+            <label for="PhoneNumber">Phone Number:</label>
+            <input type="tel" id="PhoneNumber" required>
+
+            <label for="YourPassword">Password:</label>
+            <input type="password" id="YourPassword" required>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="pop()">Remove Last Entry</button>
+            <button type="button" onclick="shift()">Remove First Entry</button>
+        </form>
+        
+        <div id="showText"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
