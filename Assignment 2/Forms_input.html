@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Signup Form</h2>
+        <form id="signupForm" onsubmit="displayResults(); return false;">
+            <input type="text" id="name" placeholder="Name" required><br>
+            <input type="text" id="fatherName" placeholder="Father's Name" required><br>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="tel" id="phone" placeholder="Phone Number" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="result-container" id="resultContainer">
+        <h3>Input Results:</h3>
+        <p><strong>Name:</strong> <span id="resultName"></span></p>
+        <p><strong>Father's Name:</strong> <span id="resultFatherName"></span></p>
+        <p><strong>Email:</strong> <span id="resultEmail"></span></p>
+        <p><strong>Phone Number:</strong> <span id="resultPhone"></span></p>
+        <p><strong>Password:</strong> <span id="resultPassword"></span></p>
+    </div>
+
+ 
+  <script src="app.js"></script>
+</body>
+</html>
