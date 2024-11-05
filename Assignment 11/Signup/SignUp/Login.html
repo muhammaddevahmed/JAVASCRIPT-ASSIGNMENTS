@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup & Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="signupContainer">
+    <h2>Signup</h2>
+    <input type="text" id="signupFirstName" placeholder="First Name" required>
+    <input type="text" id="signupLastName" placeholder="Last Name" required>
+    <input type="email" id="signupEmail" placeholder="Email" required>
+    <input type="text" id="signupPhone" placeholder="Phone Number" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <button onclick="signup()">Signup</button>
+    <p class="message" id="signupMessage"></p>
+</div>
+
+<div class="container" id="loginContainer" style="display: none;">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p class="message" id="loginMessage"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
+</html>
