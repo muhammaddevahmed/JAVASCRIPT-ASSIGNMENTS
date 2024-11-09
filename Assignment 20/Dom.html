@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Node</title>
+
+    <style>
+
+        body{
+
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(255, 220, 224);
+
+        }
+
+        button{
+
+            padding: 10px;
+            border: 1px solid black;
+            background-color: orange;
+            font-size: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- nav is here  -->
+    <nav>
+
+        Nav is here
+
+        <ul> 
+
+            it is ul
+
+            <li>
+                li is in the ul
+
+                <a href="#">
+
+                    a from first li
+
+                    <button type="button" onclick="BTN1()">Dedication</button>
+                </a>
+
+            </li>
+
+            <li>
+                another li 
+                <a href="#">a for the second li
+
+                    <button onclick="BTN2()">Focus</button>
+
+                </a>
+                 
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- main is here  -->
+    <main>
+
+        it,s a main 
+
+        <h1>heading h1 in the main
+
+            <button onclick="BTN3()">Consistency</button>
+
+        </h1>
+        <p>
+            para for main
+
+            <button onclick="BTN4()">Discipline</button>
+            <img src="https://w7.pngwing.com/pngs/266/755/png-transparent-webflow-blue-w-logo-icon-tech-companies-thumbnail.png" width="50px" alt="img">
+
+        </p>
+
+        <button onclick="BTN5()">Patience</button>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
