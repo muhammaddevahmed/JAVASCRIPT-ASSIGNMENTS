@@ -182,8 +182,6 @@ var onlineStore = [
     },
 ]
 
-for (var i = 0; i < onlineStore.length; i++) {
-    var storeDetails = onlineStore[i];
-    console.log(storeDetails.orders);
-   
-}
+
+
+
